@@ -1,23 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package filereader;
 
 import filereader.Service.FileStreamService;
+import filereader.Service.TransactionService;
+import java.io.IOException;
 
-/**
- *
- * @author User
- */
 public class FileReader {
+
+    private static FileStreamService fservice = new FileStreamService("test.txt");
+    private static TransactionService tservice = new TransactionService();
     
-    String fileName = "plik_z_danymi.txt";
-    private FileStreamService fileService = new FileStreamService(fileName);
-    public static void main(String[] args) {
-    fileService.read();
+    public static void main(String[] args) throws IOException {
+    fservice.read();
+    tservice.getList(fservice.getListElement());
+    tservice.run();
+    tservice.getAllAmount();
        
-    
     }
+   
 }

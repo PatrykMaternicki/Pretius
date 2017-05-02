@@ -8,6 +8,10 @@ public class Transaction {
    private String dst_iban;
    private String amount;
 
+    public String getAmount() {
+        return amount;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -26,10 +30,6 @@ public class Transaction {
 
     public void setAmount(String amount) {
         this.amount = amount;
-    }
-
-    public String getAmount() {
-        return amount;
     }
    
 }
