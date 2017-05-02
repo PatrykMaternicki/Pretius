@@ -7,10 +7,11 @@ import java.io.IOException;
 
 public class FileReader {
 
-    private static FileStreamService fservice = new FileStreamService("test.txt");
+    private static FileStreamService fservice;
     private static TransactionService tservice = new TransactionService();
     
     public static void main(String[] args) throws IOException {
+    fservice = new FileStreamService(args[0]);
     fservice.read();
     tservice.getList(fservice.getListElement());
     tservice.run();
